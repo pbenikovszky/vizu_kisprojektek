@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemonok</title>
+    <script src="https://d3js.org/d3.v5.min.js" defer></script>
+    <script src="./js/pokemon.js" defer></script>
+    <link rel="stylesheet" href="./css/pokemon.css" />
+  </head>
+  <body>
+    <div id="tooltip" class="hidden">
+      <p><strong id="header"></strong></p>
+      <p><span id="value"></span></p>
+    </div>
+
+    <div class="filter-container">
+      <span>Select type: </span>
+      <select id="typeFilter"> </select>
+    </div>
+    <div class="svg-container"> </div>
+  </body>
+</html>

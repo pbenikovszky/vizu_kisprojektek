@@ -1,0 +1,98 @@
+:root {
+  --button-size: 40px;
+  --button-color-hue: 10;
+  --button-color-sat: 66%;
+  --button-color-light: 45%;
+}
+
+#tooltip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(10px + 4.5rem);
+  color: wheat;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(32, 32, 32, 0.75);
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all 250ms linear;
+  overflow: hidden;
+}
+#tooltip.hidden {
+  opacity: 0;
+}
+
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.svg {
+  border: 1px solid black;
+  position: relative;
+}
+
+.pan-buttons {
+  position: absolute;
+  bottom: var(--button-size);
+  right: var(--button-size);
+  width: calc(3 * var(--button-size));
+  height: calc(3 * var(--button-size));
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    '. north .'
+    'west . east'
+    '. south .';
+}
+
+.pan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: hsl(
+    var(--button-color-hue),
+    var(--button-color-sat),
+    var(--button-color-light)
+  );
+  color: white;
+  cursor: pointer;
+}
+
+.pan:hover {
+  background-color: hsl(
+    var(--button-color-hue),
+    var(--button-color-sat),
+    calc(20% + var(--button-color-light))
+  );
+}
+
+.pan.north {
+  grid-area: north;
+}
+.pan.west {
+  grid-area: west;
+}
+.pan.south {
+  grid-area: south;
+}
+.pan.east {
+  grid-area: east;
+}
